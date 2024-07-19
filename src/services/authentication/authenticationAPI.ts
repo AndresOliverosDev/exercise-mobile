@@ -1,8 +1,9 @@
 import axios from 'axios';
 import apiClient from '../apiClient';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { URL_API_BASE } from '../URL_API_BASE';
 
-const API_URL = 'http://192.168.4.198:8181/auth';
+const API_URL = `${URL_API_BASE}/auth`;
 
 const login = async (username: string, password: string) => {
     try {

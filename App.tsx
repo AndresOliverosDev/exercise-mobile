@@ -5,11 +5,12 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import LoginScreen from './src/screens/authScreen/LoginScreen';
 import HomeScreen from './src/screens/homeScreen/HomeScreen';
-import MenuScreen from './src/screens/menuScreen/MenuScreen';
+import NotificationScreen from './src/screens/notificationScreen/NotificationScreen';
+import MyTableComponent from './src/components/table/MyTable';
 
 export type RootStackParamList = {
     Login: undefined;
-    Menu: undefined;
+    Home: undefined;
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
@@ -18,7 +19,8 @@ const Drawer = createDrawerNavigator();
 const DrawerNavigator = () => (
     <Drawer.Navigator initialRouteName="Home">
         <Drawer.Screen name="Home" component={HomeScreen} />
-        <Drawer.Screen name="Menu" component={MenuScreen} />
+        <Drawer.Screen name="Notifications" component={NotificationScreen} />
+        <Drawer.Screen name="Table" component={MyTableComponent} />
     </Drawer.Navigator>
 );
 
@@ -32,7 +34,7 @@ const App: React.FC = () => {
                     options={{ headerShown: false }}
                 />
                 <Stack.Screen
-                    name="Menu"
+                    name="Home"
                     component={DrawerNavigator}
                     options={{ headerShown: false }}
                 />

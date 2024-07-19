@@ -2,18 +2,15 @@ import React from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 import { NavigationProp, ParamListBase } from '@react-navigation/native';
 
-type HomeScreenProps = {
+type NotificationsScreenProps = {
     navigation: NavigationProp<ParamListBase>;
 };
 
-const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
+const NotificationsScreen: React.FC<NotificationsScreenProps> = ({ navigation }) => {
     return (
         <View style={styles.container}>
-            <Text style={styles.welcomeText}>¡Bienvenido a la pantalla de inicio!</Text>
-            <Button
-                onPress={() => navigation.navigate('Notifications')}
-                title="Go to notifications"
-            />
+            <Text style={styles.text}>Notificaciones</Text>
+            <Button onPress={() => navigation.goBack()} title="Go back home" />
         </View>
     );
 };
@@ -25,7 +22,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#1c1c1c',
     },
-    welcomeText: {
+    text: {
         fontSize: 24,
         color: 'white',
         textAlign: 'center',
@@ -33,4 +30,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default HomeScreen;
+export default NotificationsScreen;

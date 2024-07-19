@@ -21,7 +21,7 @@ const LoginScreen: React.FC = () => {
     const onSubmit = async (data: FormData) => {
         const success = await login(data.username, data.password);
         if (success) {
-            navigation.navigate('Menu');
+            navigation.navigate('Home');
         } else {
             setAuthError('Nombre de usuario o contraseña incorrectos');
         }
